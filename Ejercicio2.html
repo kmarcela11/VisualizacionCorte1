@@ -526,6 +526,7 @@ document.write(`
 <section id="inciso-1">
 <h2><strong>Inciso 1</strong><a class="headerlink" href="#inciso-1" title="Permalink to this heading">#</a></h2>
 <p><strong>Crear un gráfico utilizando una técnica de visualización adecuada que presente de la mejor manera posible el patrón global de las características de height y weight de los ganadores de medallas de 2016 de los cinco deportes.</strong></p>
+<p>Para solucionar este inciso el primer paso es filtrar el DataFrame para incluir únicamente las filas correspondientes a los ganadores de medallas de 2016 en los siguientes deportes <code class="docutils literal notranslate"><span class="pre">Athletics</span></code>, <code class="docutils literal notranslate"><span class="pre">Swimming</span></code>, <code class="docutils literal notranslate"><span class="pre">Rowing</span></code>, <code class="docutils literal notranslate"><span class="pre">Football</span></code>, <code class="docutils literal notranslate"><span class="pre">Hockey</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deportes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Athletics&quot;</span><span class="p">,</span> <span class="s2">&quot;Swimming&quot;</span><span class="p">,</span> <span class="s2">&quot;Rowing&quot;</span><span class="p">,</span> <span class="s2">&quot;Football&quot;</span><span class="p">,</span> <span class="s2">&quot;Hockey&quot;</span><span class="p">]</span>
@@ -666,6 +667,7 @@ document.write(`
 </table>
 </div></div></div>
 </div>
+<p>Ahora, observando el conjunto de datos notamos una gran variedad de variables categóricas y numéricas. Para identificar algunos estadísticos de cada una de ellas es adecuado utilizar el método <code class="docutils literal notranslate"><span class="pre">.describe()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dep_2016</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>
@@ -861,20 +863,30 @@ document.write(`
 </table>
 </div></div></div>
 </div>
+<p>Luego de haber utilizado <code class="docutils literal notranslate"><span class="pre">.describe</span></code> para ver la información más relevante del conjunto de datos, es posible afirmar que existen 5 variables numéricas y 10 variables categóricas. Entre las variables númericas encontramos la edad (<code class="docutils literal notranslate"><span class="pre">Age</span></code>), la altura (<code class="docutils literal notranslate"><span class="pre">Height</span></code>) y el peso (<code class="docutils literal notranslate"><span class="pre">Weight</span></code>) de cada atleta y el año , que en este caso es <code class="docutils literal notranslate"><span class="pre">2016</span></code>. También es posible ver el <code class="docutils literal notranslate"><span class="pre">ID</span></code>, esta última variable es diferente para cada atleta por lo tanto las estadísticas no van a representar una información útil.
+Ahora, en cuanto a las variables categóricas encontramos <code class="docutils literal notranslate"><span class="pre">Name</span></code>, <code class="docutils literal notranslate"><span class="pre">Sex</span></code>, <code class="docutils literal notranslate"><span class="pre">Team</span></code>, <code class="docutils literal notranslate"><span class="pre">NOC</span></code>, <code class="docutils literal notranslate"><span class="pre">Games</span></code>, <code class="docutils literal notranslate"><span class="pre">Season</span></code>, <code class="docutils literal notranslate"><span class="pre">City</span></code>, <code class="docutils literal notranslate"><span class="pre">Sport</span></code>, <code class="docutils literal notranslate"><span class="pre">Event</span></code> y <code class="docutils literal notranslate"><span class="pre">Medal</span></code>.</p>
+<p>Al evaluar cuál es la visualización adecuada para que un patrón global represente las características de <code class="docutils literal notranslate"><span class="pre">Height</span></code> y <code class="docutils literal notranslate"><span class="pre">Weight</span></code>, encontramos el diagrama de dispersión, el cual es muy útil cuando se quiere ver que tanto se relaciona linealmente una variable con otra. En este caso tomamos el peso (<code class="docutils literal notranslate"><span class="pre">Weight</span></code>) como la variable independiente y la altura ( <code class="docutils literal notranslate"><span class="pre">Height</span></code>) como la variable dependiente. Es decir, veremos que tanto influye el peso en la altura de cada participante. Es posible tomar las variables en diferente orden, siendo la altura la variable independiente y el peso la variable dependiente.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;Weight&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Height&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">dep_2016</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;#FF69B4&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Peso &#39;</span><span class="p">)</span>  
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Altura &#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Diagrama de dispersión entre el peso y la altura de los participantes.&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/033cf549c5e74938242d51f3076dd6e9d6ab5ea32eb5b82bdce46af8d2ef79c0.png" src="_images/033cf549c5e74938242d51f3076dd6e9d6ab5ea32eb5b82bdce46af8d2ef79c0.png" />
+<img alt="_images/235af2d6fb5c122f9f71ea67e57dd678ad81f415b1e6710ef08085d93630c00d.png" src="_images/235af2d6fb5c122f9f71ea67e57dd678ad81f415b1e6710ef08085d93630c00d.png" />
 </div>
 </div>
+<p>Luego de haber graficado el diagrama de dispersión, es posible notar una relación directa y ligeramente fuerte entre ambas variables. Vemos que cada punto representado en el diagrama forman una linea que se dispersa hacia arriba, lo que permite indicar que a medida que el peso va aumentando, la altura tambien aumentará. También es posible notar que algunos datos no se encuentran tan cercanos a otros, los cuales podríamos considerar como atipícos, sin embargo, para darle validez a esa información se deben aplicar otro tipo de estadísticas.</p>
 </section>
 <section id="inciso-2">
 <h2><strong>Inciso 2</strong><a class="headerlink" href="#inciso-2" title="Permalink to this heading">#</a></h2>
 <p><strong>Crear un gráfico utilizando una técnica de visualización adecuada que presente de la mejor manera posible la estadística de resumen para la altura y el peso de los jugadores que ganaron cada tipo de medalla (oro/plata/bronce) en los datos.</strong></p>
+<p>Para resolver el inciso 2 , se realizarán dos diagramas de cajas y bigotes. Donde en cada uno se evaluará como influye el peso y la altura dependiendo de los diferentes tipos de medallas obtenidas por cada atleta en el año 2016.</p>
+<p>Primero, se realizó el conteo de las medallas para cada tipo (Oro, plata y bronce)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dep_medallas</span> <span class="o">=</span> <span class="p">(</span><span class="n">dep_2016</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Medal&#39;</span><span class="p">])</span>
@@ -930,29 +942,34 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">palet</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;#F5DEB3&#39;</span><span class="p">,</span> <span class="s1">&#39;#B3B3B3&#39;</span> <span class="p">,</span> <span class="s1">&#39;#BDB76B&#39;</span><span class="p">]</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  
 <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;Medal&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;Weight&#39;</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">dep_2016</span><span class="p">,</span> <span class="n">palette</span> <span class="o">=</span> <span class="n">palet</span> <span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución del Peso por Medalla&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Medalla&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Peso&#39;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> 
-<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;Medal&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;Height&#39;</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">dep_2016</span><span class="p">,</span> <span class="n">palette</span> <span class="o">=</span> <span class="n">palet</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución de la Altura por Medalla&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Medalla&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Altura&#39;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span> <span class="c1"># Ajusta el espacio y ayuda a evitar superposiciones</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f956a01dee694641116956b899ac52c5c6587994ef3bdaf6996f8080f67a2637.png" src="_images/f956a01dee694641116956b899ac52c5c6587994ef3bdaf6996f8080f67a2637.png" />
+<img alt="_images/afdeca0830286d59bd9a99b0eb722bc329991abefd315de603241c489ec33a2e.png" src="_images/afdeca0830286d59bd9a99b0eb722bc329991abefd315de603241c489ec33a2e.png" />
 </div>
 </div>
+<p>El gráfico muestra la distribución del peso de los atletas según la medalla ganada (Bronce, Plata, Oro). La mediana del peso es ligeramente mayor para los ganadores de Oro y Plata en comparación con los de Bronce, pero todos tienen una distribución similar. Los bigotes indican el rango de los datos, excluyendo los valores atípicos, que son más altos en todos los grupos, reflejando algunos atletas con pesos significativamente diferentes del promedio.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;Medal&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;Height&#39;</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">dep_2016</span><span class="p">,</span> <span class="n">palette</span> <span class="o">=</span> <span class="n">palet</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución de la Altura por Medalla&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Medalla&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Altura&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/39a61bc609996aa172a147c05516f45d4047bd0b672df88d49ebece2f48c4e8d.png" src="_images/39a61bc609996aa172a147c05516f45d4047bd0b672df88d49ebece2f48c4e8d.png" />
+</div>
+</div>
+<p>El gráfico muestra la distribución de la altura de los atletas según la medalla obtenida (Bronce, Plata, Oro). La mediana de la altura es similar en las tres categorías, con una ligera tendencia a ser mayor en los ganadores de Oro. Los bigotes indican que el rango de alturas es amplio en todos los grupos, desde aproximadamente 150 cm hasta 200 cm o más. Se observa un valor atípico en la categoría de Bronce, lo que indica un atleta significativamente más bajo que los demás. En general, las alturas de los atletas están distribuidas de manera similar entre los diferentes tipos de medallas.</p>
 </section>
 </section>
 
