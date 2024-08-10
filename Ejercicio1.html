@@ -64,6 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Ejercicio1';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Ejercicio 2" href="Ejercicio2.html" />
     <link rel="prev" title="Visualización de datos y toma de decisiones con Python." href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -157,6 +158,7 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Ejercicio 1</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ejercicio2.html"><strong>Ejercicio 2</strong></a></li>
 </ul>
 
     </div>
@@ -536,7 +538,7 @@ document.write(`
 </section>
 <section id="inciso-1">
 <h2><strong>Inciso 1</strong><a class="headerlink" href="#inciso-1" title="Permalink to this heading">#</a></h2>
-<p><strong>1.Generar un gráfico que indique el número de medallas concedidas en cada uno de los cinco principales deportes en 2016.</strong></p>
+<p><strong>Generar un gráfico que indique el número de medallas concedidas en cada uno de los cinco principales deportes en 2016.</strong></p>
 <p>El primer paso para resolver este inciso es filtrar el DataFrame donde solo se incluyan las filas correspondientes a los ganadores de medallas de 2016.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -793,20 +795,18 @@ document.write(`
 <span class="c1"># Configuración de la gráfica</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_axis_labels</span><span class="p">(</span><span class="s1">&#39;Deporte&#39;</span><span class="p">,</span> <span class="s1">&#39;Número de Medallas&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Número de Medallas de los cinco deportes principales.&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;Número de Medallas de los cinco deportes principales.&#39;)
-</pre></div>
-</div>
 <img alt="_images/16a78cce750652a8d9bac65b3d286862e29a4706b09813c7a360f4dbc786ea97.png" src="_images/16a78cce750652a8d9bac65b3d286862e29a4706b09813c7a360f4dbc786ea97.png" />
 </div>
 </div>
 </section>
 <section id="inciso-2">
 <h2><strong>Inciso 2</strong><a class="headerlink" href="#inciso-2" title="Permalink to this heading">#</a></h2>
-<p><strong>2.Trazar un gráfico que represente la distribución de la edad de los ganadores de medallas en los cinco principales deportes en 2016.</strong></p>
+<p><strong>Trazar un gráfico que represente la distribución de la edad de los ganadores de medallas en los cinco principales deportes en 2016.</strong></p>
 <p>Se filtra el DataFrame anteriormente creado (<code class="docutils literal notranslate"><span class="pre">med_2016</span></code>), donde se encuentran todos los registros de medallas obtenidas en 2016 y se usa el método <code class="docutils literal notranslate"><span class="pre">.isin</span></code> para indicar que solo se muestren los registros de los cinco deportes con más medallas en 2016.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -955,20 +955,18 @@ document.write(`
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Distribucion de las edades de los ganadores&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Edad&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Frecuencia&#39;)
-</pre></div>
-</div>
 <img alt="_images/1f7b82265c2c31be7baa1f28064b9ffc8aab5879d0db124fe07be1849e2989e0.png" src="_images/1f7b82265c2c31be7baa1f28064b9ffc8aab5879d0db124fe07be1849e2989e0.png" />
 </div>
 </div>
 </section>
 <section id="inciso-3">
 <h2><strong>Inciso 3</strong><a class="headerlink" href="#inciso-3" title="Permalink to this heading">#</a></h2>
-<p><strong>3.Descubrir qué equipos nacionales ganaron el mayor número de medallas en los cinco principales deportes en 2016.</strong></p>
+<p><strong>Descubrir qué equipos nacionales ganaron el mayor número de medallas en los cinco principales deportes en 2016.</strong></p>
 <p>Para la solución de este inciso, es fundamental organizar los datos anteriormente filtrados de los cinco principales deportes en 2016 (<code class="docutils literal notranslate"><span class="pre">dep_pri</span></code>). La organización se hará por equipos (paises). Seguido a ello se organizan de mayor a menor la cantidad de medallas obtenidas y se muestran los cinco equipos que ganaron la mayor cantidad de medallas en los cinco principales deportes en 2016.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1185,20 +1183,18 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;Team&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;Count&#39;</span><span class="p">,</span> <span class="n">hue</span> <span class="o">=</span> <span class="s1">&#39;Sport&#39;</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">dep_team</span> <span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Paises&#39;</span><span class="p">,</span> <span class="n">fontdict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;fontsize&#39;</span> <span class="p">:</span> <span class="mi">12</span><span class="p">})</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Cantidad de medallas &#39;</span><span class="p">,</span> <span class="n">fontdict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;fontsize&#39;</span> <span class="p">:</span> <span class="mi">12</span><span class="p">})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Cantidad de medallas &#39;)
-</pre></div>
-</div>
 <img alt="_images/e8b72f46caaab4b547fbff5b943e633ee162776701aff2bb6de0a58c4c352989.png" src="_images/e8b72f46caaab4b547fbff5b943e633ee162776701aff2bb6de0a58c4c352989.png" />
 </div>
 </div>
 </section>
 <section id="inciso-4">
 <h2><strong>Inciso 4</strong><a class="headerlink" href="#inciso-4" title="Permalink to this heading">#</a></h2>
-<p><strong>4.Observar la tendencia del peso medio de los atletas masculinos y femeninos ganadores en los cinco principales deportes en 2016</strong></p>
+<p><strong>Observar la tendencia del peso medio de los atletas masculinos y femeninos ganadores en los cinco principales deportes en 2016</strong></p>
 <p>Primero se debe agrupar las observaciones de los ganadores en los cinco principales deportes en 2016 dependiendo el tipo de género (masculino o femenino) y luego sumar cada uno de sus pesos, los cuales se van a agregar y así construir un nuevo DataFrame.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1307,13 +1303,11 @@ document.write(`
                  <span class="n">palette</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;#BF3EFF&#39;</span><span class="p">,</span> <span class="s1">&#39;#C1FFC1&#39;</span><span class="p">])</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Deportes&#39;</span><span class="p">,</span> <span class="n">fontdict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;fontsize&#39;</span> <span class="p">:</span> <span class="mi">12</span><span class="p">})</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Suma de los pesos &#39;</span><span class="p">,</span> <span class="n">fontdict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;fontsize&#39;</span> <span class="p">:</span> <span class="mi">12</span><span class="p">})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Suma de los pesos &#39;)
-</pre></div>
-</div>
 <img alt="_images/7344b2fe3ae36557663dca43683777bbc4bfd67ff959db2104c5a50cb8a7e699.png" src="_images/7344b2fe3ae36557663dca43683777bbc4bfd67ff959db2104c5a50cb8a7e699.png" />
 </div>
 </div>
@@ -1359,6 +1353,15 @@ document.write(`
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">Visualización de datos y toma de decisiones con Python.</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="Ejercicio2.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><strong>Ejercicio 2</strong></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
   
