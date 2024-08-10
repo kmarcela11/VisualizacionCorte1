@@ -351,26 +351,11 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#librerias-necesarias"><strong>Librerias necesarias</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe"><strong>DataFrame</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inicialmente-se-hace-la-descarga-del-conjunto-de-datos-y-se-formatea-como-un-dataframe-de-pandas">Inicialmente, se hace la descarga del conjunto de datos y se formatea como un DataFrame de pandas.</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inciso-1"><strong>Inciso 1</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generar-un-grafico-que-indique-el-numero-de-medallas-concedidas-en-cada-uno-de-los-cinco-principales-deportes-en-2016">Generar un gráfico que indique el número de medallas concedidas en cada uno de los cinco principales deportes en 2016.</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inciso-2"><strong>Inciso 2</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trazar-un-grafico-que-represente-la-distribucion-de-la-edad-de-los-ganadores-de-medallas-en-los-cinco-principales-deportes-en-2016">Trazar un gráfico que represente la distribución de la edad de los ganadores de medallas en los cinco principales deportes en 2016.</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inciso-3"><strong>Inciso 3</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descubrir-que-equipos-nacionales-ganaron-el-mayor-numero-de-medallas-en-los-cinco-principales-deportes-en-2016">Descubrir qué equipos nacionales ganaron el mayor número de medallas en los cinco principales deportes en 2016.</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inciso-4"><strong>Inciso 4</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#observar-la-tendencia-del-peso-medio-de-los-atletas-masculinos-y-femeninos-ganadores-en-los-cinco-principales-deportes-en-2016">Observar la tendencia del peso medio de los atletas masculinos y femeninos ganadores en los cinco principales deportes en 2016</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe"><strong>DataFrame</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inciso-1"><strong>Inciso 1</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inciso-2"><strong>Inciso 2</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inciso-3"><strong>Inciso 3</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inciso-4"><strong>Inciso 4</strong></a></li>
 </ul>
             </nav>
         </div>
@@ -401,8 +386,7 @@ document.write(`
 </section>
 <section id="dataframe">
 <h2><strong>DataFrame</strong><a class="headerlink" href="#dataframe" title="Permalink to this heading">#</a></h2>
-<section id="inicialmente-se-hace-la-descarga-del-conjunto-de-datos-y-se-formatea-como-un-dataframe-de-pandas">
-<h3>Inicialmente, se hace la descarga del conjunto de datos y se formatea como un DataFrame de pandas.<a class="headerlink" href="#inicialmente-se-hace-la-descarga-del-conjunto-de-datos-y-se-formatea-como-un-dataframe-de-pandas" title="Permalink to this heading">#</a></h3>
+<p>Inicialmente, se hace la descarga del conjunto de datos y se formatea como un DataFrame de pandas.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Se descarga el conjunto de datos.</span>
@@ -550,11 +534,9 @@ document.write(`
 </div></div></div>
 </div>
 </section>
-</section>
 <section id="inciso-1">
 <h2><strong>Inciso 1</strong><a class="headerlink" href="#inciso-1" title="Permalink to this heading">#</a></h2>
-<section id="generar-un-grafico-que-indique-el-numero-de-medallas-concedidas-en-cada-uno-de-los-cinco-principales-deportes-en-2016">
-<h3>Generar un gráfico que indique el número de medallas concedidas en cada uno de los cinco principales deportes en 2016.<a class="headerlink" href="#generar-un-grafico-que-indique-el-numero-de-medallas-concedidas-en-cada-uno-de-los-cinco-principales-deportes-en-2016" title="Permalink to this heading">#</a></h3>
+<p><strong>1.Generar un gráfico que indique el número de medallas concedidas en cada uno de los cinco principales deportes en 2016.</strong></p>
 <p>El primer paso para resolver este inciso es filtrar el DataFrame donde solo se incluyan las filas correspondientes a los ganadores de medallas de 2016.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -822,11 +804,9 @@ document.write(`
 </div>
 </div>
 </section>
-</section>
 <section id="inciso-2">
 <h2><strong>Inciso 2</strong><a class="headerlink" href="#inciso-2" title="Permalink to this heading">#</a></h2>
-<section id="trazar-un-grafico-que-represente-la-distribucion-de-la-edad-de-los-ganadores-de-medallas-en-los-cinco-principales-deportes-en-2016">
-<h3>Trazar un gráfico que represente la distribución de la edad de los ganadores de medallas en los cinco principales deportes en 2016.<a class="headerlink" href="#trazar-un-grafico-que-represente-la-distribucion-de-la-edad-de-los-ganadores-de-medallas-en-los-cinco-principales-deportes-en-2016" title="Permalink to this heading">#</a></h3>
+<p><strong>2.Trazar un gráfico que represente la distribución de la edad de los ganadores de medallas en los cinco principales deportes en 2016.</strong></p>
 <p>Se filtra el DataFrame anteriormente creado (<code class="docutils literal notranslate"><span class="pre">med_2016</span></code>), donde se encuentran todos los registros de medallas obtenidas en 2016 y se usa el método <code class="docutils literal notranslate"><span class="pre">.isin</span></code> para indicar que solo se muestren los registros de los cinco deportes con más medallas en 2016.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -986,11 +966,9 @@ document.write(`
 </div>
 </div>
 </section>
-</section>
 <section id="inciso-3">
 <h2><strong>Inciso 3</strong><a class="headerlink" href="#inciso-3" title="Permalink to this heading">#</a></h2>
-<section id="descubrir-que-equipos-nacionales-ganaron-el-mayor-numero-de-medallas-en-los-cinco-principales-deportes-en-2016">
-<h3>Descubrir qué equipos nacionales ganaron el mayor número de medallas en los cinco principales deportes en 2016.<a class="headerlink" href="#descubrir-que-equipos-nacionales-ganaron-el-mayor-numero-de-medallas-en-los-cinco-principales-deportes-en-2016" title="Permalink to this heading">#</a></h3>
+<p><strong>3.Descubrir qué equipos nacionales ganaron el mayor número de medallas en los cinco principales deportes en 2016.</strong></p>
 <p>Para la solución de este inciso, es fundamental organizar los datos anteriormente filtrados de los cinco principales deportes en 2016 (<code class="docutils literal notranslate"><span class="pre">dep_pri</span></code>). La organización se hará por equipos (paises). Seguido a ello se organizan de mayor a menor la cantidad de medallas obtenidas y se muestran los cinco equipos que ganaron la mayor cantidad de medallas en los cinco principales deportes en 2016.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1218,11 +1196,9 @@ document.write(`
 </div>
 </div>
 </section>
-</section>
 <section id="inciso-4">
 <h2><strong>Inciso 4</strong><a class="headerlink" href="#inciso-4" title="Permalink to this heading">#</a></h2>
-<section id="observar-la-tendencia-del-peso-medio-de-los-atletas-masculinos-y-femeninos-ganadores-en-los-cinco-principales-deportes-en-2016">
-<h3>Observar la tendencia del peso medio de los atletas masculinos y femeninos ganadores en los cinco principales deportes en 2016<a class="headerlink" href="#observar-la-tendencia-del-peso-medio-de-los-atletas-masculinos-y-femeninos-ganadores-en-los-cinco-principales-deportes-en-2016" title="Permalink to this heading">#</a></h3>
+<p><strong>4.Observar la tendencia del peso medio de los atletas masculinos y femeninos ganadores en los cinco principales deportes en 2016</strong></p>
 <p>Primero se debe agrupar las observaciones de los ganadores en los cinco principales deportes en 2016 dependiendo el tipo de género (masculino o femenino) y luego sumar cada uno de sus pesos, los cuales se van a agregar y así construir un nuevo DataFrame.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1343,7 +1319,6 @@ document.write(`
 </div>
 </section>
 </section>
-</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1404,26 +1379,11 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#librerias-necesarias"><strong>Librerias necesarias</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe"><strong>DataFrame</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inicialmente-se-hace-la-descarga-del-conjunto-de-datos-y-se-formatea-como-un-dataframe-de-pandas">Inicialmente, se hace la descarga del conjunto de datos y se formatea como un DataFrame de pandas.</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inciso-1"><strong>Inciso 1</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generar-un-grafico-que-indique-el-numero-de-medallas-concedidas-en-cada-uno-de-los-cinco-principales-deportes-en-2016">Generar un gráfico que indique el número de medallas concedidas en cada uno de los cinco principales deportes en 2016.</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inciso-2"><strong>Inciso 2</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trazar-un-grafico-que-represente-la-distribucion-de-la-edad-de-los-ganadores-de-medallas-en-los-cinco-principales-deportes-en-2016">Trazar un gráfico que represente la distribución de la edad de los ganadores de medallas en los cinco principales deportes en 2016.</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inciso-3"><strong>Inciso 3</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descubrir-que-equipos-nacionales-ganaron-el-mayor-numero-de-medallas-en-los-cinco-principales-deportes-en-2016">Descubrir qué equipos nacionales ganaron el mayor número de medallas en los cinco principales deportes en 2016.</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inciso-4"><strong>Inciso 4</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#observar-la-tendencia-del-peso-medio-de-los-atletas-masculinos-y-femeninos-ganadores-en-los-cinco-principales-deportes-en-2016">Observar la tendencia del peso medio de los atletas masculinos y femeninos ganadores en los cinco principales deportes en 2016</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe"><strong>DataFrame</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inciso-1"><strong>Inciso 1</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inciso-2"><strong>Inciso 2</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inciso-3"><strong>Inciso 3</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inciso-4"><strong>Inciso 4</strong></a></li>
 </ul>
   </nav></div>
 
