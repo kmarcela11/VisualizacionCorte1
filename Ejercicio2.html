@@ -943,7 +943,7 @@ Ahora, en cuanto a las variables categóricas encontramos <code class="docutils 
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">palet</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;#F5DEB3&#39;</span><span class="p">,</span> <span class="s1">&#39;#B3B3B3&#39;</span> <span class="p">,</span> <span class="s1">&#39;#BDB76B&#39;</span><span class="p">]</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;Medal&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;Weight&#39;</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">dep_2016</span><span class="p">,</span> <span class="n">palette</span> <span class="o">=</span> <span class="n">palet</span> <span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución del Peso por Medalla&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución del peso por Medalla&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Medalla&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Peso&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -951,14 +951,14 @@ Ahora, en cuanto a las variables categóricas encontramos <code class="docutils 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/afdeca0830286d59bd9a99b0eb722bc329991abefd315de603241c489ec33a2e.png" src="_images/afdeca0830286d59bd9a99b0eb722bc329991abefd315de603241c489ec33a2e.png" />
+<img alt="_images/326d77ec86596f720cdc3dc4c981147cc0abe2be5488977416b266e96637b780.png" src="_images/326d77ec86596f720cdc3dc4c981147cc0abe2be5488977416b266e96637b780.png" />
 </div>
 </div>
 <p>El gráfico muestra la distribución del peso de los atletas según la medalla ganada (Bronce, Plata, Oro). La mediana del peso es ligeramente mayor para los ganadores de Oro y Plata en comparación con los de Bronce, pero todos tienen una distribución similar. Los bigotes indican el rango de los datos, excluyendo los valores atípicos, que son más altos en todos los grupos, reflejando algunos atletas con pesos significativamente diferentes del promedio.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;Medal&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;Height&#39;</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">dep_2016</span><span class="p">,</span> <span class="n">palette</span> <span class="o">=</span> <span class="n">palet</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución de la Altura por Medalla&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución de la Altura por medalla&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Medalla&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Altura&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -966,7 +966,7 @@ Ahora, en cuanto a las variables categóricas encontramos <code class="docutils 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/39a61bc609996aa172a147c05516f45d4047bd0b672df88d49ebece2f48c4e8d.png" src="_images/39a61bc609996aa172a147c05516f45d4047bd0b672df88d49ebece2f48c4e8d.png" />
+<img alt="_images/2bf66489dee897eed13be150613042fd8b2adf7e53408994cc4fa21afcdb8dd3.png" src="_images/2bf66489dee897eed13be150613042fd8b2adf7e53408994cc4fa21afcdb8dd3.png" />
 </div>
 </div>
 <p>El gráfico muestra la distribución de la altura de los atletas según la medalla obtenida (Bronce, Plata, Oro). La mediana de la altura es similar en las tres categorías, con una ligera tendencia a ser mayor en los ganadores de Oro. Los bigotes indican que el rango de alturas es amplio en todos los grupos, desde aproximadamente 150 cm hasta 200 cm o más. Se observa un valor atípico en la categoría de Bronce, lo que indica un atleta significativamente más bajo que los demás. En general, las alturas de los atletas están distribuidas de manera similar entre los diferentes tipos de medallas.</p>
