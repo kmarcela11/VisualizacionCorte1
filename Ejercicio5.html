@@ -61,6 +61,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Ejercicio5';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -3037,76 +3039,6 @@ Name: VALOR PRECIO, dtype: float64
 </div>
 </div>
 <p>El análisis estadístico de los precios medios de la gasolina motor por departamento en Colombia muestra que el precio promedio es de 13,031.77 pesos colombianos, con una desviación estándar de aproximadamente 906.87 pesos, lo que refleja una variabilidad moderada entre los departamentos. El precio mínimo registrado es de 10,790.64 pesos, mientras que el máximo alcanza los 15,150.81 pesos. La mediana se sitúa en 12,935.91 pesos, indicando que la mitad de los departamentos tienen precios por debajo de esta cifra y la otra mitad por encima. Estos datos sugieren que, aunque los precios varían entre departamentos, la mayoría se agrupa en torno a un rango central.</p>
-<p>Ahora,se agrupan los precios de la gasolina por departamentos y se clasifican en intervalos definidos como ‘Bajo’, ‘Medio’, y ‘Alto’, basados en los rangos de precios especificados. Además, se formatean los valores de la columna <code class="docutils literal notranslate"><span class="pre">'VALOR</span> <span class="pre">PRECIO'</span></code> para mostrarlos en un formato más legible, utilizando separadores de miles y agregando el símbolo de peso colombiano.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bins</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10000</span><span class="p">,</span> <span class="mi">12000</span><span class="p">,</span> <span class="mi">14000</span><span class="p">,</span> <span class="mi">16000</span><span class="p">]</span>
-<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Bajo&#39;</span><span class="p">,</span> <span class="s1">&#39;Medio&#39;</span><span class="p">,</span>  <span class="s1">&#39;Alto&#39;</span><span class="p">]</span>
-<span class="n">df_precios</span><span class="p">[</span><span class="s1">&#39;RANGO&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">df_precios</span><span class="p">[</span><span class="s1">&#39;VALOR PRECIO&#39;</span><span class="p">],</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">bins</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">labels</span><span class="p">)</span>
-<span class="n">df_precios</span><span class="p">[</span><span class="s1">&#39;VALOR PRECIO&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_precios</span><span class="p">[</span><span class="s1">&#39;VALOR PRECIO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;$</span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s1">,.0f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span> <span class="c1"># Pasar a pesos colombianos</span>
-<span class="n">df_precios</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>DEPARTAMENTO</th>
-      <th>VALOR PRECIO</th>
-      <th>RANGO</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>AMAZONAS</td>
-      <td>$15,151</td>
-      <td>Alto</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>ANTIOQUIA</td>
-      <td>$13,088</td>
-      <td>Medio</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>ARAUCA</td>
-      <td>$12,787</td>
-      <td>Medio</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>ARCHIPIELAGO DE SAN ANDRES</td>
-      <td>$14,225</td>
-      <td>Alto</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>ATLANTICO</td>
-      <td>$12,348</td>
-      <td>Medio</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
 <p>Ahora se utiliza la librería <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> para leer un archivo shapefile (.shp), que contiene la información geoespacial de Colombia. Este objeto <code class="docutils literal notranslate"><span class="pre">mapa_col</span></code> contendrá tanto los datos geométricos como los límites de los departamentos, lo que permitirá su visualización en un mapa.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3117,10 +3049,10 @@ Name: VALOR PRECIO, dtype: float64
 </div>
 </div>
 <p>En esta parte del código, se realiza una unión entre los dos DataFrames de intéres: <code class="docutils literal notranslate"><span class="pre">mapa_col</span></code>, que contiene la información geoespacial, y <code class="docutils literal notranslate"><span class="pre">df_precios</span></code>, que tiene datos sobre los precios de combustible por departamento. La fusión se hace utilizando como claves de unión la columna <code class="docutils literal notranslate"><span class="pre">DPTO_CNMBR</span></code> del DataFrame <code class="docutils literal notranslate"><span class="pre">mapa_col</span></code> y la columna <code class="docutils literal notranslate"><span class="pre">DEPARTAMENTO</span></code> del DataFrame <code class="docutils literal notranslate"><span class="pre">df_precios</span></code>.</p>
-<p>Se usa el parámetro <code class="docutils literal notranslate"><span class="pre">how</span> <span class="pre">=</span> <span class="pre">'left'</span></code> para asegurar que se conserven todas las filas del DataFrame <code class="docutils literal notranslate"><span class="pre">mapa_col</span></code> (izquierda) y solo se agregarán datos de <code class="docutils literal notranslate"><span class="pre">df_precios</span></code> cuando coincidan los departamentos. Esto permite que el resultado sea un DataFrame que incluye tanto la información geoespacial como los valores de precios de combustible y su rango categorizado (Bajo, Medio, Alto).</p>
+<p>Se usa el parámetro <code class="docutils literal notranslate"><span class="pre">how</span> <span class="pre">=</span> <span class="pre">'left'</span></code> para asegurar que se conserven todas las filas del DataFrame <code class="docutils literal notranslate"><span class="pre">mapa_col</span></code> (izquierda) y solo se agregarán datos de <code class="docutils literal notranslate"><span class="pre">df_precios</span></code> cuando coincidan los departamentos. Esto permite que el resultado sea un DataFrame que incluye tanto la información geoespacial como los valores de precios de combustible.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mapa_col</span> <span class="o">=</span> <span class="n">mapa_col</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_precios</span><span class="p">[[</span><span class="s1">&#39;DEPARTAMENTO&#39;</span><span class="p">,</span><span class="s1">&#39;VALOR PRECIO&#39;</span><span class="p">,</span> <span class="s1">&#39;RANGO&#39;</span><span class="p">]],</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mapa_col</span> <span class="o">=</span> <span class="n">mapa_col</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_precios</span><span class="p">[[</span><span class="s1">&#39;DEPARTAMENTO&#39;</span><span class="p">,</span><span class="s1">&#39;VALOR PRECIO&#39;</span><span class="p">]],</span> 
                           <span class="n">left_on</span> <span class="o">=</span> <span class="s1">&#39;DPTO_CNMBR&#39;</span><span class="p">,</span> 
                           <span class="n">right_on</span> <span class="o">=</span> <span class="s1">&#39;DEPARTAMENTO&#39;</span><span class="p">,</span> 
                           <span class="n">how</span> <span class="o">=</span> <span class="s1">&#39;left&#39;</span><span class="p">)</span>
@@ -3128,36 +3060,10 @@ Name: VALOR PRECIO, dtype: float64
 </div>
 </div>
 </div>
-<p>Antes de visualizar el mapa, se observa la distribución de los precios de los combustibles en un diagrama de barras que clasifica los precios en tres rangos: Bajo, Medio y Alto.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">df_precios</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;RANGO&#39;</span><span class="p">,</span> <span class="n">aspect</span> <span class="o">=</span> <span class="mf">1.5</span><span class="p">,</span> <span class="n">kind</span> <span class="o">=</span> <span class="s2">&quot;count&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;#8FBC8F&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_axis_labels</span><span class="p">(</span><span class="s1">&#39;Rango de precio&#39;</span><span class="p">,</span> <span class="s1">&#39;Frecuencia&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Distribución de los diferentes rangos de precio de los combustibles&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;whitegrid&quot;</span><span class="p">)</span> 
-<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">top</span> <span class="o">=</span> <span class="mf">0.9</span><span class="p">)</span> 
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">which</span> <span class="o">=</span> <span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="n">df_precios</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="s1">&#39;RANGO&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/21877717e17b28c8056c1b33a76aac9d5a0cf7c04e46782d2076d83669b55711.png" src="_images/21877717e17b28c8056c1b33a76aac9d5a0cf7c04e46782d2076d83669b55711.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RANGO
-Medio    26
-Alto      5
-Bajo      2
-Name: count, dtype: int64
-</pre></div>
-</div>
-</div>
-</div>
-<p>La mayoría de los departamentos caen en el rango Medio, es decir, los valores varían entre 12.000 y 16.000 pesos, lo que sugiere que los precios del combustible en estos lugares están dentro de un intervalo promedio. Un número mucho menor de departamentos está clasificado en los rangos Bajo (Entre 8.000 y 12.000) y Alto (Entre 16.000 y 20.000), indicando que estos precios son menos comunes y representan extremos en la distribución general de precios a nivel nacional.</p>
 <p>Finalmente, graficamos el mapa interactivo donde se puede ver la variabilidad de precios del combustible gasolina motor dependiendo el departamento donde está ubicado</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mapa_col</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span> <span class="o">=</span> <span class="s2">&quot;RANGO&quot;</span><span class="p">,</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">18</span><span class="p">),</span> <span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">edgecolor</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">colormap</span> <span class="o">=</span> <span class="s1">&#39;Greens&#39;</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mapa_col</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span> <span class="o">=</span> <span class="s2">&quot;VALOR PRECIO&quot;</span><span class="p">,</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">18</span><span class="p">),</span> <span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">edgecolor</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">colormap</span> <span class="o">=</span> <span class="s1">&#39;Greens&#39;</span> <span class="p">)</span>
 <span class="k">for</span> <span class="n">index</span><span class="p">,</span><span class="n">row</span> <span class="ow">in</span> <span class="n">mapa_col</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span> <span class="c1"># Los siguientes códigos permiten incluir los nombres de los municipios</span>
     <span class="n">xy</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">centroid</span><span class="o">.</span><span class="n">coords</span><span class="p">[:]</span>
     <span class="n">xytext</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">centroid</span><span class="o">.</span><span class="n">coords</span><span class="p">[:]</span>
@@ -3167,7 +3073,90 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e7a830ab5485c66e4a7ef6271e5bf36e7dcdb6cb8e23383a1dc43699b93197f2.png" src="_images/e7a830ab5485c66e4a7ef6271e5bf36e7dcdb6cb8e23383a1dc43699b93197f2.png" />
+<img alt="_images/d866998804134a4c5bcb412b289a9388ded6cbbd66e203205bf5871afb74db0a.png" src="_images/d866998804134a4c5bcb412b289a9388ded6cbbd66e203205bf5871afb74db0a.png" />
+</div>
+</div>
+<p>Este mapa muestra la distribución de los precios del combustible tipo gasolina motor en los diferentes departamentos de Colombia. Los valores varían desde <span class="math notranslate nohighlight">\(12,184 hasta \)</span>15,151, con Amazonas y Guainía presentando los precios más altos, mientras que departamentos como Nariño y Cundinamarca tienen los precios más bajos, alrededor de $12,229. Los tonos más oscuros en el mapa representan los departamentos donde la gasolina es más cara, indicando una variabilidad significativa en los costos de combustible a lo largo del país.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tablaa</span> <span class="o">=</span> <span class="n">df_motor</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;DEPARTAMENTO&#39;</span><span class="p">)[</span><span class="s1">&#39;VALOR PRECIO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">tablaa</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Departamento&#39;</span><span class="p">,</span> <span class="s1">&#39;Precio promedio de gasolina motor&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tabulate</span><span class="p">(</span><span class="n">tablaa</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="s1">&#39;keys&#39;</span><span class="p">,</span> <span class="n">tablefmt</span> <span class="o">=</span> <span class="s1">&#39;fancy_grid&#39;</span><span class="p">,</span> <span class="n">showindex</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>╒══════════════════════════════════════════════════════════╤═════════════════════════════════════╕
+│ Departamento                                             │   Precio promedio de gasolina motor │
+╞══════════════════════════════════════════════════════════╪═════════════════════════════════════╡
+│ AMAZONAS                                                 │                             15150.8 │
+├──────────────────────────────────────────────────────────┼─────────────────────────────────────┤
+│ ANTIOQUIA                                                │                             13088.2 │
+├──────────────────────────────────────────────────────────┼─────────────────────────────────────┤
+│ ARAUCA                                                   │                             12787.5 │
+├──────────────────────────────────────────────────────────┼─────────────────────────────────────┤
+│ ARCHIPIELAGO DE SAN ANDRES, SANTA CATALINA Y PROVIDENCIA │                             14225   │
+├──────────────────────────────────────────────────────────┼─────────────────────────────────────┤
+│ ATLANTICO                                                │                             12348.4 │
+├──────────────────────────────────────────────────────────┼─────────────────────────────────────┤
+│ BOGOTA D.C.                                              │                             12571.7 │
+├──────────────────────────────────────────────────────────┼─────────────────────────────────────┤
+│ BOLIVAR                                                  │                             12595.1 │
+├──────────────────────────────────────────────────────────┼─────────────────────────────────────┤
+│ BOYACA                                                   │                             13239.3 │
+├──────────────────────────────────────────────────────────┼─────────────────────────────────────┤
+│ CALDAS                                                   │                             13045.5 │
+├──────────────────────────────────────────────────────────┼─────────────────────────────────────┤
+│ CAQUETA                                                  │                             13208.1 │
+├──────────────────────────────────────────────────────────┼─────────────────────────────────────┤
+│ CASANARE                                                 │                             13106.2 │
+├──────────────────────────────────────────────────────────┼─────────────────────────────────────┤
+│ CAUCA                                                    │                             12884.2 │
+├──────────────────────────────────────────────────────────┼─────────────────────────────────────┤
+│ CESAR                                                    │                             10790.6 │
+├──────────────────────────────────────────────────────────┼─────────────────────────────────────┤
+│ CHOCO                                                    │                             13692.4 │
+├──────────────────────────────────────────────────────────┼─────────────────────────────────────┤
+│ CORDOBA                                                  │                             13079.8 │
+├──────────────────────────────────────────────────────────┼─────────────────────────────────────┤
+│ CUNDINAMARCA                                             │                             12935.9 │
+├──────────────────────────────────────────────────────────┼─────────────────────────────────────┤
+│ GUAINIA                                                  │                             15053.9 │
+├──────────────────────────────────────────────────────────┼─────────────────────────────────────┤
+│ GUAVIARE                                                 │                             14287   │
+├──────────────────────────────────────────────────────────┼─────────────────────────────────────┤
+│ HUILA                                                    │                             12961   │
+├──────────────────────────────────────────────────────────┼─────────────────────────────────────┤
+│ LA GUAJIRA                                               │                             13240.1 │
+├──────────────────────────────────────────────────────────┼─────────────────────────────────────┤
+│ MAGDALENA                                                │                             12597.6 │
+├──────────────────────────────────────────────────────────┼─────────────────────────────────────┤
+│ META                                                     │                             13233.7 │
+├──────────────────────────────────────────────────────────┼─────────────────────────────────────┤
+│ NARIÑO                                                   │                             11228.5 │
+├──────────────────────────────────────────────────────────┼─────────────────────────────────────┤
+│ NORTE DE SANTANDER                                       │                             12183.5 │
+├──────────────────────────────────────────────────────────┼─────────────────────────────────────┤
+│ PUTUMAYO                                                 │                             12460.7 │
+├──────────────────────────────────────────────────────────┼─────────────────────────────────────┤
+│ QUINDIO                                                  │                             12821.5 │
+├──────────────────────────────────────────────────────────┼─────────────────────────────────────┤
+│ RISARALDA                                                │                             12734.4 │
+├──────────────────────────────────────────────────────────┼─────────────────────────────────────┤
+│ SANTANDER                                                │                             12411   │
+├──────────────────────────────────────────────────────────┼─────────────────────────────────────┤
+│ SUCRE                                                    │                             12639.5 │
+├──────────────────────────────────────────────────────────┼─────────────────────────────────────┤
+│ TOLIMA                                                   │                             12801.2 │
+├──────────────────────────────────────────────────────────┼─────────────────────────────────────┤
+│ VALLE DEL CAUCA                                          │                             12703.7 │
+├──────────────────────────────────────────────────────────┼─────────────────────────────────────┤
+│ VAUPES                                                   │                             14699.7 │
+├──────────────────────────────────────────────────────────┼─────────────────────────────────────┤
+│ VICHADA                                                  │                             13242.8 │
+╘══════════════════════════════════════════════════════════╧═════════════════════════════════════╛
+</pre></div>
+</div>
 </div>
 </div>
 </section>
