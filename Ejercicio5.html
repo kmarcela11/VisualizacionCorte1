@@ -61,8 +61,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Ejercicio5';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -446,111 +444,71 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;C:/Users/kamac/OneDrive/Desktop/VisualizacionUN/DataVisualization/Accidentalidad_en_Barranquilla_20240827.csv&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+<span class="nn">File ~\miniconda3\envs\data_viz\lib\site-packages\pandas\io\parsers\readers.py:1026,</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1013</span> <span class="n">kwds_defaults</span> <span class="o">=</span> <span class="n">_refine_defaults_read</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1014</span>     <span class="n">dialect</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1015</span>     <span class="n">delimiter</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1022</span>     <span class="n">dtype_backend</span><span class="o">=</span><span class="n">dtype_backend</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1023</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1024</span> <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1026</span> <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>FECHA_ACCIDENTE</th>
-      <th>HORA_ACCIDENTE</th>
-      <th>GRAVEDAD_ACCIDENTE</th>
-      <th>CLASE_ACCIDENTE</th>
-      <th>SITIO_EXACTO_ACCIDENTE</th>
-      <th>CANT_HERIDOS_EN _SITIO_ACCIDENTE</th>
-      <th>CANT_MUERTOS_EN _SITIO_ACCIDENTE</th>
-      <th>CANTIDAD_ACCIDENTES</th>
-      <th>AÑO_ACCIDENTE</th>
-      <th>MES_ACCIDENTE</th>
-      <th>DIA_ACCIDENTE</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2018-01-01T00:00:00.000</td>
-      <td>01:30:00:am</td>
-      <td>Con heridos</td>
-      <td>Atropello</td>
-      <td>CL 87 9H 24</td>
-      <td>1.0</td>
-      <td>NaN</td>
-      <td>1</td>
-      <td>2018</td>
-      <td>January</td>
-      <td>Mon</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2018-01-01T00:00:00.000</td>
-      <td>02:00:00:pm</td>
-      <td>Solo daños</td>
-      <td>Choque</td>
-      <td>CL 110 CR 46</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>1</td>
-      <td>2018</td>
-      <td>January</td>
-      <td>Mon</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2018-01-01T00:00:00.000</td>
-      <td>04:00:00:am</td>
-      <td>Solo daños</td>
-      <td>Choque</td>
-      <td>AV CIRCUNVALAR CR 9G</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>1</td>
-      <td>2018</td>
-      <td>January</td>
-      <td>Mon</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2018-01-01T00:00:00.000</td>
-      <td>04:30:00:am</td>
-      <td>Solo daños</td>
-      <td>Choque</td>
-      <td>CLLE 72 CRA 29</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>1</td>
-      <td>2018</td>
-      <td>January</td>
-      <td>Mon</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2018-01-01T00:00:00.000</td>
-      <td>05:20:00:pm</td>
-      <td>Solo daños</td>
-      <td>Choque</td>
-      <td>VIA 40 CALLE 75</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>1</td>
-      <td>2018</td>
-      <td>January</td>
-      <td>Mon</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="nn">File ~\miniconda3\envs\data_viz\lib\site-packages\pandas\io\parsers\readers.py:620,</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">617</span> <span class="n">_validate_names</span><span class="p">(</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;names&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">619</span> <span class="c1"># Create the parser.</span>
+<span class="ne">--&gt; </span><span class="mi">620</span> <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">622</span> <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">623</span>     <span class="k">return</span> <span class="n">parser</span>
+
+<span class="nn">File ~\miniconda3\envs\data_viz\lib\site-packages\pandas\io\parsers\readers.py:1620,</span> in <span class="ni">TextFileReader.__init__</span><span class="nt">(self, f, engine, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1617</span>     <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1619</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span> <span class="n">IOHandles</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="ne">-&gt; </span><span class="mi">1620</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
+
+<span class="nn">File ~\miniconda3\envs\data_viz\lib\site-packages\pandas\io\parsers\readers.py:1880,</span> in <span class="ni">TextFileReader._make_engine</span><span class="nt">(self, f, engine)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1878</span>     <span class="k">if</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1879</span>         <span class="n">mode</span> <span class="o">+=</span> <span class="s2">&quot;b&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1880</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="o">=</span> <span class="n">get_handle</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1881</span>     <span class="n">f</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1882</span>     <span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1883</span>     <span class="n">encoding</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1884</span>     <span class="n">compression</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;compression&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1885</span>     <span class="n">memory_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;memory_map&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1886</span>     <span class="n">is_text</span><span class="o">=</span><span class="n">is_text</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1887</span>     <span class="n">errors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;strict&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1888</span>     <span class="n">storage_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;storage_options&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1889</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1890</span> <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+<span class="g g-Whitespace">   </span><span class="mi">1891</span> <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="o">.</span><span class="n">handle</span>
+
+<span class="nn">File ~\miniconda3\envs\data_viz\lib\site-packages\pandas\io\common.py:873,</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">868</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">869</span>     <span class="c1"># Check whether the filename is to be opened in binary mode.</span>
+<span class="g g-Whitespace">    </span><span class="mi">870</span>     <span class="c1"># Binary mode does not support &#39;encoding&#39; and &#39;newline&#39;.</span>
+<span class="g g-Whitespace">    </span><span class="mi">871</span>     <span class="k">if</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span> <span class="ow">and</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">872</span>         <span class="c1"># Encoding</span>
+<span class="ne">--&gt; </span><span class="mi">873</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">874</span>             <span class="n">handle</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">875</span>             <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">876</span>             <span class="n">encoding</span><span class="o">=</span><span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">877</span>             <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">878</span>             <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">879</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">880</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">881</span>         <span class="c1"># Binary mode</span>
+<span class="g g-Whitespace">    </span><span class="mi">882</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;C:/Users/kamac/OneDrive/Desktop/VisualizacionUN/DataVisualization/Accidentalidad_en_Barranquilla_20240827.csv&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <section id="diccionario-de-variables">
 <h3><strong>Diccionario de variables</strong><a class="headerlink" href="#diccionario-de-variables" title="Permalink to this heading">#</a></h3>
@@ -712,59 +670,59 @@ memory usage: 2.1+ MB
   <tbody>
     <tr>
       <th>count</th>
-      <td>9984.000000</td>
-      <td>252.000000</td>
-      <td>25610.000000</td>
-      <td>25610.000000</td>
+      <td>9984.00</td>
+      <td>252.00</td>
+      <td>25610.00</td>
+      <td>25610.00</td>
     </tr>
     <tr>
       <th>mean</th>
-      <td>1.471655</td>
-      <td>1.035714</td>
-      <td>1.000195</td>
-      <td>2020.100547</td>
+      <td>1.47</td>
+      <td>1.04</td>
+      <td>1.00</td>
+      <td>2020.10</td>
     </tr>
     <tr>
       <th>std</th>
-      <td>1.156751</td>
-      <td>0.185946</td>
-      <td>0.013972</td>
-      <td>1.713887</td>
+      <td>1.16</td>
+      <td>0.19</td>
+      <td>0.01</td>
+      <td>1.71</td>
     </tr>
     <tr>
       <th>min</th>
-      <td>1.000000</td>
-      <td>1.000000</td>
-      <td>1.000000</td>
-      <td>2018.000000</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>2018.00</td>
     </tr>
     <tr>
       <th>25%</th>
-      <td>1.000000</td>
-      <td>1.000000</td>
-      <td>1.000000</td>
-      <td>2019.000000</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>2019.00</td>
     </tr>
     <tr>
       <th>50%</th>
-      <td>1.000000</td>
-      <td>1.000000</td>
-      <td>1.000000</td>
-      <td>2020.000000</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>2020.00</td>
     </tr>
     <tr>
       <th>75%</th>
-      <td>2.000000</td>
-      <td>1.000000</td>
-      <td>1.000000</td>
-      <td>2021.000000</td>
+      <td>2.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>2021.00</td>
     </tr>
     <tr>
       <th>max</th>
-      <td>42.000000</td>
-      <td>2.000000</td>
-      <td>2.000000</td>
-      <td>2024.000000</td>
+      <td>42.00</td>
+      <td>2.00</td>
+      <td>2.00</td>
+      <td>2024.00</td>
     </tr>
   </tbody>
 </table>
@@ -925,9 +883,9 @@ Name: count, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GRAVEDAD_ACCIDENTE
-Solo daños     60.355330
-Con heridos    38.660679
-Con muertos     0.983991
+Solo daños    60.36
+Con heridos   38.66
+Con muertos    0.98
 Name: count, dtype: float64
 </pre></div>
 </div>
@@ -1185,7 +1143,7 @@ Name: HORA_ACCIDENTE, dtype: object
       <td>Choque</td>
       <td>CL 110 CR 6A 40</td>
       <td>NaN</td>
-      <td>1.0</td>
+      <td>1.00</td>
       <td>1</td>
       <td>2020</td>
       <td>July</td>
@@ -1198,8 +1156,8 @@ Name: HORA_ACCIDENTE, dtype: object
       <td>Con muertos</td>
       <td>Choque</td>
       <td>DIAG 74C CR 15</td>
-      <td>2.0</td>
-      <td>1.0</td>
+      <td>2.00</td>
+      <td>1.00</td>
       <td>1</td>
       <td>2020</td>
       <td>October</td>
@@ -1213,7 +1171,7 @@ Name: HORA_ACCIDENTE, dtype: object
       <td>Choque</td>
       <td>CALLE 70C CARRERA 24</td>
       <td>NaN</td>
-      <td>1.0</td>
+      <td>1.00</td>
       <td>1</td>
       <td>2022</td>
       <td>September</td>
@@ -1424,7 +1382,7 @@ Name: HORA_ACCIDENTE, dtype: object
       <td>Con heridos</td>
       <td>Atropello</td>
       <td>CL 99D CR 8E</td>
-      <td>3.0</td>
+      <td>3.00</td>
       <td>NaN</td>
       <td>1</td>
       <td>2019</td>
@@ -1438,7 +1396,7 @@ Name: HORA_ACCIDENTE, dtype: object
       <td>Con heridos</td>
       <td>Choque</td>
       <td>CR 22 CL 37</td>
-      <td>1.0</td>
+      <td>1.00</td>
       <td>NaN</td>
       <td>1</td>
       <td>2019</td>
@@ -1452,7 +1410,7 @@ Name: HORA_ACCIDENTE, dtype: object
       <td>Con heridos</td>
       <td>Choque</td>
       <td>CR 11 CL 40</td>
-      <td>2.0</td>
+      <td>2.00</td>
       <td>NaN</td>
       <td>1</td>
       <td>2019</td>
@@ -1653,7 +1611,7 @@ Name: HORA_ACCIDENTE, dtype: object
       <td>Con heridos</td>
       <td>Choque</td>
       <td>CL 86 CR 9L</td>
-      <td>1.0</td>
+      <td>1.00</td>
       <td>NaN</td>
       <td>1</td>
       <td>2020</td>
@@ -1944,7 +1902,7 @@ El resto de las columnas no tienen datos faltantes, es decir, el porcentaje de v
       <td>Atropello</td>
       <td>CALLE 30 # 8 - 11</td>
       <td>NaN</td>
-      <td>1.0</td>
+      <td>1.00</td>
       <td>1</td>
       <td>2024</td>
       <td>June</td>
@@ -1958,7 +1916,7 @@ El resto de las columnas no tienen datos faltantes, es decir, el porcentaje de v
       <td>Choque</td>
       <td>CALLE 110 CARRERA 37</td>
       <td>NaN</td>
-      <td>1.0</td>
+      <td>1.00</td>
       <td>1</td>
       <td>2024</td>
       <td>June</td>
@@ -1972,7 +1930,7 @@ El resto de las columnas no tienen datos faltantes, es decir, el porcentaje de v
       <td>Choque</td>
       <td>CALLE 19 CON CRA 7A</td>
       <td>NaN</td>
-      <td>1.0</td>
+      <td>1.00</td>
       <td>1</td>
       <td>2024</td>
       <td>June</td>
@@ -2000,7 +1958,7 @@ El resto de las columnas no tienen datos faltantes, es decir, el porcentaje de v
       <td>Choque</td>
       <td>CARRERA 43 CON CALLE 41</td>
       <td>NaN</td>
-      <td>1.0</td>
+      <td>1.00</td>
       <td>1</td>
       <td>2024</td>
       <td>June</td>
@@ -2066,7 +2024,7 @@ El resto de las columnas no tienen datos faltantes, es decir, el porcentaje de v
       <td>Con heridos</td>
       <td>Atropello</td>
       <td>CL 87 9H 24</td>
-      <td>1.0</td>
+      <td>1.00</td>
       <td>NaN</td>
       <td>1</td>
       <td>2018</td>
@@ -2179,7 +2137,7 @@ El resto de las columnas no tienen datos faltantes, es decir, el porcentaje de v
       <td>Con heridos</td>
       <td>Choque</td>
       <td>CARRERA 5C CALLE 90</td>
-      <td>2.0</td>
+      <td>2.00</td>
       <td>NaN</td>
       <td>1</td>
       <td>2024</td>
@@ -2193,7 +2151,7 @@ El resto de las columnas no tienen datos faltantes, es decir, el porcentaje de v
       <td>Con heridos</td>
       <td>Choque</td>
       <td>CARRERA 42G CALLE 90</td>
-      <td>1.0</td>
+      <td>1.00</td>
       <td>NaN</td>
       <td>1</td>
       <td>2024</td>
@@ -2207,7 +2165,7 @@ El resto de las columnas no tienen datos faltantes, es decir, el porcentaje de v
       <td>Con heridos</td>
       <td>Choque</td>
       <td>CALLE 116 CARRERA 38</td>
-      <td>1.0</td>
+      <td>1.00</td>
       <td>NaN</td>
       <td>1</td>
       <td>2024</td>
@@ -2221,7 +2179,7 @@ El resto de las columnas no tienen datos faltantes, es decir, el porcentaje de v
       <td>Con heridos</td>
       <td>Choque</td>
       <td>CALLE 56 FRENTE AL # 8E - 48</td>
-      <td>2.0</td>
+      <td>2.00</td>
       <td>NaN</td>
       <td>1</td>
       <td>2024</td>
@@ -2235,7 +2193,7 @@ El resto de las columnas no tienen datos faltantes, es decir, el porcentaje de v
       <td>Con heridos</td>
       <td>Atropello</td>
       <td>CARRERA 8 CALLE 49</td>
-      <td>2.0</td>
+      <td>2.00</td>
       <td>NaN</td>
       <td>1</td>
       <td>2024</td>
@@ -2461,7 +2419,7 @@ El resto de las columnas no tienen datos faltantes, es decir, el porcentaje de v
       <td>01-Jan-2023</td>
       <td>AMAZONAS</td>
       <td>LA PEDRERA</td>
-      <td>15000.0</td>
+      <td>15000.00</td>
     </tr>
     <tr>
       <th>1</th>
@@ -2471,7 +2429,7 @@ El resto de las columnas no tienen datos faltantes, es decir, el porcentaje de v
       <td>01-Jan-2023</td>
       <td>AMAZONAS</td>
       <td>LA PEDRERA</td>
-      <td>15500.0</td>
+      <td>15500.00</td>
     </tr>
     <tr>
       <th>2</th>
@@ -2481,7 +2439,7 @@ El resto de las columnas no tienen datos faltantes, es decir, el porcentaje de v
       <td>01-Jan-2023</td>
       <td>AMAZONAS</td>
       <td>LETICIA</td>
-      <td>11380.0</td>
+      <td>11380.00</td>
     </tr>
     <tr>
       <th>3</th>
@@ -2491,7 +2449,7 @@ El resto de las columnas no tienen datos faltantes, es decir, el porcentaje de v
       <td>01-Jan-2023</td>
       <td>AMAZONAS</td>
       <td>LETICIA</td>
-      <td>10840.0</td>
+      <td>10840.00</td>
     </tr>
     <tr>
       <th>4</th>
@@ -2501,7 +2459,7 @@ El resto de las columnas no tienen datos faltantes, es decir, el porcentaje de v
       <td>01-Jan-2023</td>
       <td>AMAZONAS</td>
       <td>LETICIA</td>
-      <td>11380.0</td>
+      <td>11380.00</td>
     </tr>
   </tbody>
 </table>
@@ -3060,23 +3018,6 @@ Name: VALOR PRECIO, dtype: float64
 </div>
 </div>
 </div>
-<p>Finalmente, graficamos el mapa interactivo donde se puede ver la variabilidad de precios del combustible gasolina motor dependiendo el departamento donde está ubicado</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mapa_col</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span> <span class="o">=</span> <span class="s2">&quot;VALOR PRECIO&quot;</span><span class="p">,</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">18</span><span class="p">),</span> <span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">edgecolor</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">colormap</span> <span class="o">=</span> <span class="s1">&#39;Greens&#39;</span> <span class="p">)</span>
-<span class="k">for</span> <span class="n">index</span><span class="p">,</span><span class="n">row</span> <span class="ow">in</span> <span class="n">mapa_col</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span> <span class="c1"># Los siguientes códigos permiten incluir los nombres de los municipios</span>
-    <span class="n">xy</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">centroid</span><span class="o">.</span><span class="n">coords</span><span class="p">[:]</span>
-    <span class="n">xytext</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">centroid</span><span class="o">.</span><span class="n">coords</span><span class="p">[:]</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;DEPARTAMENTO&#39;</span><span class="p">],</span><span class="n">xy</span><span class="o">=</span><span class="n">xy</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xytext</span><span class="o">=</span><span class="n">xytext</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>  <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span><span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/d866998804134a4c5bcb412b289a9388ded6cbbd66e203205bf5871afb74db0a.png" src="_images/d866998804134a4c5bcb412b289a9388ded6cbbd66e203205bf5871afb74db0a.png" />
-</div>
-</div>
-<p>Este mapa muestra la distribución de los precios del combustible tipo gasolina motor en los diferentes departamentos de Colombia. Los valores varían desde <span class="math notranslate nohighlight">\(12,184 hasta \)</span>15,151, con Amazonas y Guainía presentando los precios más altos, mientras que departamentos como Nariño y Cundinamarca tienen los precios más bajos, alrededor de $12,229. Los tonos más oscuros en el mapa representan los departamentos donde la gasolina es más cara, indicando una variabilidad significativa en los costos de combustible a lo largo del país.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tablaa</span> <span class="o">=</span> <span class="n">df_motor</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;DEPARTAMENTO&#39;</span><span class="p">)[</span><span class="s1">&#39;VALOR PRECIO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
@@ -3159,6 +3100,23 @@ Name: VALOR PRECIO, dtype: float64
 </div>
 </div>
 </div>
+<p>Finalmente, graficamos el mapa interactivo donde se puede ver la variabilidad de precios del combustible gasolina motor dependiendo el departamento donde está ubicado</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mapa_col</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span> <span class="o">=</span> <span class="s2">&quot;VALOR PRECIO&quot;</span><span class="p">,</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">18</span><span class="p">),</span> <span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">edgecolor</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">colormap</span> <span class="o">=</span> <span class="s1">&#39;Greens&#39;</span> <span class="p">)</span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span><span class="n">row</span> <span class="ow">in</span> <span class="n">mapa_col</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span> <span class="c1"># Los siguientes códigos permiten incluir los nombres de los municipios</span>
+    <span class="n">xy</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">centroid</span><span class="o">.</span><span class="n">coords</span><span class="p">[:]</span>
+    <span class="n">xytext</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">centroid</span><span class="o">.</span><span class="n">coords</span><span class="p">[:]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;DEPARTAMENTO&#39;</span><span class="p">],</span><span class="n">xy</span><span class="o">=</span><span class="n">xy</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xytext</span><span class="o">=</span><span class="n">xytext</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>  <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span><span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/d866998804134a4c5bcb412b289a9388ded6cbbd66e203205bf5871afb74db0a.png" src="_images/d866998804134a4c5bcb412b289a9388ded6cbbd66e203205bf5871afb74db0a.png" />
+</div>
+</div>
+<p>Este mapa ilustra la distribución de los precios del combustible tipo gasolina motor en los distintos departamentos de Colombia, con valores que oscilan entre 12,184 y 15,151 pesos. Los departamentos de Amazonas y Guainía se destacan por tener los precios más altos, mientras que Nariño y Cundinamarca registran los precios más bajos. Los tonos más oscuros en el mapa identifican las regiones donde la gasolina es más costosa, evidenciando una variabilidad notable en los costos de combustible en todo el país. En general, se observa que los departamentos ubicados en el sureste, como Amazonas, tienden a tener los precios más elevados, en contraste con los departamentos del centro y norte, que muestran precios más bajos. Esto sugiere una posible relación entre la ubicación geográfica y el costo del combustible.</p>
 </section>
 </section>
 
